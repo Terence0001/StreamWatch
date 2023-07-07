@@ -1,6 +1,4 @@
-import numpy as np
-import pandas as pd
-import streamlit as st
+import numpy as np, streamlit as st, pandas as pd
 
 # Titre de l'application
 st.title('Ramassages Uber à New York')
