@@ -14,7 +14,7 @@ Il utilisera le framework [streamlit](https://streamlit.io/) et un modèle IA [Y
 
 ---
 
-### Puis ay ajouter le contenu suivant
+### Puis y ajouter le contenu suivant
 
 ```sh
 runs/
@@ -31,7 +31,7 @@ python -m venv .venv
 ### Activer l'environnement virtuel
 
 ```sh
-.venv/Scripts/activate.bat
+.venv\Scripts\activate.bat
 ```
 
 ### Désactiver l'environnement virtuel (Si besoin)
