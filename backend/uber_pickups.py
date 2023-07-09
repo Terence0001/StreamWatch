@@ -1,19 +1,31 @@
 import streamlit as st
 from ultralytics import YOLO
-from ultralytics.yolo.v8.detect.predict import DetectionPredictor
 
-# Titre de l'application
+# Set the title and subheader of the application
 st.title("Détection d'intrusion")
 st.subheader('Activer votre webcam, pour commencer')
 
+# Create a button to start the webcam and detection
 if st.button('Commencer'):
-    # Création du modèle YOLO
+    # Load the YOLO model
     model = YOLO('./yolov8n.pt')
+
+    # Initialize the camera input widget in Streamlit
+    camera_input = st.camera_input("Détection en cours")
     
-    # Détection et affichage des résultats
-    results = st.camera_input("Détection en cours")
-    while st.camera_input:
-        model(results, source="0", stream=True)
+    # Check if the camera input widget is receiving frames
+    if camera_input:
+        # Run YOLO model inference on the video stream
+        results = model.track(source=camera_input, show=True, stream=True)
+        print(results)
+        # Loop through the results
+        for result in results:
+            # Visualize the results on the frame
+            annotated_frame = result.plot()
+            
+
+            # Display the annotated frame in Streamlit
+            st.image(annotated_frame, caption="Détection en cours", use_column_width=True)
 
     
 # if picture:
