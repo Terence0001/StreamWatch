@@ -40,16 +40,10 @@ python -m venv .venv
 deactivate
 ```
 
-### Naviguer dans le dossier du projet
-
-```sh
-cd backend
-```
-
 ### Commande pour lancer le serveur Streamlit
 
 ```sh
-streamlit run uber_pickups.py
+streamlit run picture_pred.py
 ```
 
 ### Commande pour arrêter le serveur Streamlit
@@ -59,7 +53,3 @@ ctrl + c
 ```
 
 ---
-
-## Instruction ML
-
-#### Pour télécharger le modèle et lancer son entrainement, exécuter le jupiter-notebook dans le dossier backend
