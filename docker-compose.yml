@@ -1,7 +1,10 @@
+version: "3"
 services:
   streamlit:
     build:
-      dockerfile: ./dockerfile
+      dockerfile: ./Dockerfile
       context: ./
     ports:
-      -"8081:8501"
+      - "8081:8501"  # Expose le port 8501 du conteneur Streamlit sur le port 8081 de la machine hôte
+    volumes:
+      - ./.venv:/.venv  # Montage du répertoire .venv à la racine du conteneur
