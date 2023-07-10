@@ -1,9 +1,1 @@
-runs/
-*.pt
 .venv/
-*.ipynb
-*.ipynb
-backend/Quick_Test.ipynb
-backend/__pycache__/settings.cpython-311.pyc
-backend/yolov8n.onnx
-backend/__pycache__/const.cpython-311.pyc
