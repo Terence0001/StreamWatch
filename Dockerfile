@@ -3,9 +3,8 @@ EXPOSE 8501
 RUN mkdir -p /app
 WORKDIR /app
 COPY requirements.txt ./requirements.txt
-RUN python -m venv .venv
-COPY .venv ./.venv
-SHELL ["cmd", "/S", "/C", "CALL", ".venv\\Scripts\\activate.bat && pip install -r requirements.txt"]
+RUN pip install -r requirements.txt
 COPY . .
-ENTRYPOINT ["streamlit", "run"]
+# Lance l'application Streamlit
+ENTRYPOINT ["/app/.venv/Scripts/streamlit.cmd", "run"]
 CMD ["picture_pred.py"]
