@@ -6,5 +6,5 @@ COPY requirements.txt ./requirements.txt
 RUN pip install -r requirements.txt
 COPY . .
 # Lance l'application Streamlit
-ENTRYPOINT ["/app/.venv/Scripts/streamlit.cmd", "run"]
+ENTRYPOINT ["streamlit", "run"]
 CMD ["picture_pred.py"]
